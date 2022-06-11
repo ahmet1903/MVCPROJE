@@ -1,0 +1,36 @@
+﻿@using BRT.Models.Entity
+@model Login
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/css/main.css">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <title>Giriş</title>
+</head>
+<body>
+
+    @Html.ValidationSummary()
+    <a class="btn" href="/Login/SignUp"><i class="fa fa-user-plus fa-3x" style="color: white; padding-left: 30px;" aria-hidden="true"></i></a>
+    <div class="box">
+        @using (Html.BeginForm())
+        {
+            <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
+            <label>User Name: </label>
+            <div class="username">
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.
+           Username)
+            </div>
+            <label>Password:</label>
+            <div class="password">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            <input class="submit" type="submit" value="Giriş Yap">
+        }
+    </div>
+</body>
+</html>
